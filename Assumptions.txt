@@ -1,0 +1,5 @@
+ScheduledMaintenanceJob is an instance of a MaintenanceJob with a Timeslot attached, instead of a list of jobs that an engineer had to do like a singular daily schedule for 1 engineer
+SpareParts prices are fetched from an API, but still needs a database, for the amount of parts that the car maintenance facility has.
+A Timeslot is a single entry with starting time and end time, these have to be converted into carbon time to check for weekend rates.
+A MaintenanceJob can have many parts, like a case with many parts that have to be replaced, but 1 part can also be used in many MaintenanceJob, since we can have a high amount of a part in our storage.
+
