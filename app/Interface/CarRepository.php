@@ -12,14 +12,8 @@ use Illuminate\Support\Facades\Hash;
 
 class CarRepository implements CarRepositoryInterface
 {
-
-    protected $createCarAction, $updateCarAction;
-
-
-    public function __construct(CreateCarAction $createCarAction, UpdateCarAction $updateCarAction)
+    public function __construct(protected CreateCarAction $createCarAction, protected UpdateCarAction $updateCarAction)
     {
-        $this->createCarAction = $createCarAction;
-        $this->updateCarAction = $updateCarAction;
     }
 
     public function all()

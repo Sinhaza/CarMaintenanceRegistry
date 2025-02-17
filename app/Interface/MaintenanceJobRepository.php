@@ -13,13 +13,8 @@ use Illuminate\Support\Facades\Hash;
 class MaintenanceJobRepository implements MaintenanceJobRepositoryInterface
 {
 
-    protected $createMaintenanceJobAction, $updateMaintenanceJobAction;
-
-
-    public function __construct(CreateMaintenanceJobAction $createMaintenanceJobAction, UpdateMaintenanceJobAction $updateMaintenanceJobAction)
+    public function __construct(protected CreateMaintenanceJobAction $createMaintenanceJobAction, protected UpdateMaintenanceJobAction $updateMaintenanceJobAction)
     {
-        $this->createMaintenanceJobAction = $createMaintenanceJobAction;
-        $this->updateMaintenanceJobAction = $updateMaintenanceJobAction;
     }
 
     public function all()

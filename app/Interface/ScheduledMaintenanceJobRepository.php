@@ -13,13 +13,8 @@ use Illuminate\Support\Facades\Hash;
 class ScheduledMaintenanceJobRepository implements ScheduledMaintenanceJobRepositoryInterface
 {
 
-    protected $createScheduledMaintenanceJobAction, $updateScheduledMaintenanceJobAction;
-
-
-    public function __construct(CreateScheduledMaintenanceJobAction $createScheduledMaintenanceJobAction, UpdateScheduledMaintenanceJobAction $updateScheduledMaintenanceJobAction)
+    public function __construct(protected CreateScheduledMaintenanceJobAction $createScheduledMaintenanceJobAction, protected UpdateScheduledMaintenanceJobAction $updateScheduledMaintenanceJobAction)
     {
-        $this->createScheduledMaintenanceJobAction = $createScheduledMaintenanceJobAction;
-        $this->updateScheduledMaintenanceJobAction = $updateScheduledMaintenanceJobAction;
     }
 
     public function all()
